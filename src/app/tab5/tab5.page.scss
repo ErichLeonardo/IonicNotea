@@ -1,0 +1,46 @@
+.card-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  div {
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-container ion-card {
+    border: 2px;
+    border-radius: 5px;
+    flex: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .card-container ion-card:nth-child(1) ion-card-title,
+.card-container ion-card:nth-child(1) ion-card-subtitle,
+.card-container ion-card:nth-child(1) ion-card-content {
+  color: blue;
+}
+
+.card-container ion-card:nth-child(2) ion-card-title,
+.card-container ion-card:nth-child(2) ion-card-subtitle,
+.card-container ion-card:nth-child(2) ion-card-content {
+  color: green;
+}
+
+.card-container ion-card:nth-child(3) ion-card-title,
+.card-container ion-card:nth-child(3) ion-card-subtitle,
+.card-container ion-card:nth-child(3) ion-card-content {
+  color: black;
+}
+
+
+
+

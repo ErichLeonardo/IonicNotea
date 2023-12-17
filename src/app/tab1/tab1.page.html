@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Upload note
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="form" (ngSubmit)="saveNote()">
+    <ion-item>
+      <ion-label>
+        Title
+      </ion-label>
+      <ion-input label="title" type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Description
+      </ion-label>
+      <ion-textarea label="Description" formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Date
+      </ion-label>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="datetime"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+    <ion-toolbar>
+      <ion-button slot="start" (click)="showMap()">
+        <ion-icon slot="icon-only" src="assets/icons/brujula.svg" ></ion-icon>
+      </ion-button>
+      <div id="map" *ngIf="isMapVisible"
+      style="height: 300px; width: 300px; margin-left: 10%;">
+      </div>
+      <ion-button slot="end" (click)="takePic()">
+        <ion-icon slot="icon-only" src="assets/icons/img.svg"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+    <ion-button type="submit" expand="full" [disabled]="!form.valid">Submit</ion-button>
+    <ion-img [src]="img" *ngIf="img"></ion-img>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div id="map" style="width: 100%; height: 100%;"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
