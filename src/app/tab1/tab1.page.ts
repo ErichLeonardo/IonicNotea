@@ -1,7 +1,7 @@
-
 import { Component,inject } from '@angular/core';
-import {IonicModule, LoadingController} from '@ionic/angular'
+import { LoadingController} from '@ionic/angular'
 import {FormBuilder,FormGroup,FormsModule,ReactiveFormsModule,Validators} from '@angular/forms';
+import { IonCol, IonInput,IonIcon, IonModal, IonItem, IonToolbar, IonButton, IonImg, IonGrid, IonRow, IonTextarea, IonDatetime, IonLabel, IonDatetimeButton, IonContent, IonHeader, IonTitle } from '@ionic/angular/standalone';
 import { Note } from '../model/note';
 import { NoteService } from '../services/note.service';
 import { UIService } from '../services/ui.service';
@@ -14,8 +14,7 @@ import * as L from 'leaflet';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule,
-  FormsModule,ReactiveFormsModule],
+  imports: [IonInput, FormsModule,ReactiveFormsModule, IonCol, IonIcon,IonModal,IonItem,IonToolbar, IonButton, IonImg, IonGrid, IonRow, IonDatetime, IonLabel, IonDatetimeButton, IonContent, IonHeader, IonTitle, IonTextarea],
 })
 export class Tab1Page {
   public form!:FormGroup;

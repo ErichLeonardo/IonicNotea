@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonAvatar, IonContent, IonLabel, IonItem, IonCardContent, IonCard, IonCardTitle, IonCardSubtitle, IonCardHeader, IonTitle } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tab5',
   templateUrl: './tab5.page.html',
   styleUrls: ['./tab5.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, IonHeader, IonToolbar, IonAvatar, IonContent, IonLabel, IonItem, IonCardContent, IonCard, IonCardTitle, IonCardSubtitle, IonCardHeader, IonTitle]
 })
 export class Tab5Page implements OnInit {
 

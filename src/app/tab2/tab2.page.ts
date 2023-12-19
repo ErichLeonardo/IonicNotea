@@ -1,20 +1,24 @@
-import { Component,OnInit,inject } from '@angular/core';
-import { IonicModule, Platform } from '@ionic/angular';
+
+import { Component} from '@angular/core';
+import { IonInfiniteScroll, IonInfiniteScrollContent, IonToolbar, IonTitle, IonContent, IonLabel, IonList, IonItem, IonIcon, IonItemSliding, IonItemOption, IonHeader, IonItemOptions, IonRefresher, IonRefresherContent, IonImg } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 import { NoteService } from '../services/note.service';
 import { Note } from '../model/note';
 import { CommonModule } from '@angular/common';
 import { ModalPage } from '../modal/modal.page';
-import { ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
 import { AlertController } from '@ionic/angular';
 import { BehaviorSubject, Observable, from, map, mergeMap, tap, toArray } from 'rxjs';
-import { LatLng, latLng, Marker, tileLayer } from 'leaflet';
+
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-  imports: [IonicModule,CommonModule]
+  imports: [CommonModule, IonInfiniteScroll, IonToolbar, IonTitle, 
+    IonContent, IonLabel, IonList, IonItem, IonInfiniteScrollContent, IonIcon, IonItemSliding, 
+    IonItemOption, IonHeader, IonItemOptions, IonRefresher, IonRefresherContent, IonImg]
 })
 export class Tab2Page {
   public _notes$:BehaviorSubject<Note[]> = new BehaviorSubject<Note[]>([]);
@@ -23,11 +27,20 @@ export class Tab2Page {
   public isInfiniteScrollAvailable:boolean = true;
 
 
-  constructor(public platform:Platform ,private alertController: AlertController, private modalController : ModalController, private noteService: NoteService) {}
+  constructor(
+    public platform:Platform,
+    private alertController: AlertController,
+    private modalController : ModalController,
+    private noteService: NoteService
+    ) {}
 
   
   deleteNoteSliding(note: Note) {
     this.deleteNote(note);
+  }
+
+  editNoteSliding(note: Note) {
+    this.editNote(note);
   }
 
   ionViewDidEnter(){
@@ -96,7 +109,7 @@ export class Tab2Page {
       component: ModalPage,
       componentProps: {
         'note': note,
-        'self': this // Pass the current instance of Tab2Page
+        'self': this 
       }
     });
     return await modal.present();

@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -22,7 +21,7 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "types": ["node", "jasmine", "jasminewd2", "cypress"],
+    "types": ["node"],
     "paths": {
       "@angular/*": ["node_modules/@angular/*"],
       "@app/*": ["src/app/*"],

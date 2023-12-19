@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { ModalController, NavParams } from '@ionic/angular';
+import { IonButton, IonHeader, IonImg, IonLabel, IonItem, IonContent, IonButtons, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { NavParams } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
 import { NoteService } from '../services/note.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { NoteService } from '../services/note.service';
   templateUrl: './modal.page.html',
   styleUrls: ['./modal.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, IonButton, IonHeader, IonImg, IonLabel, IonItem, IonContent, IonButtons, IonTitle, IonToolbar]
 })
 export class ModalPage implements OnInit {
 
